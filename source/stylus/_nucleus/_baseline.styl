@@ -1,0 +1,30 @@
+html,
+body
+  height 100%
+  overflow inherit
+
+*
+  html,
+  body
+    min-height 100%
+
+  html
+    #off-canvas
+      height 100%
+
+#off-canvas
+  display grid
+  min-height 100%
+  grid-template-rows auto 1fr auto
+
+form,
+label,
+input,
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+select,
+textarea
+  max-width 100%
+  resize vertical

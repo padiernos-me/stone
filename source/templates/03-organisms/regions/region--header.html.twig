@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+  ]
+%}
+{% if content %}
+  <button class="menu-toggle" aria-controls="region-header" aria-expanded="false" data-hide-text="{{ 'Hide menu' |t }}">
+    <span class="toggle-label visually-hidden">{{ "Open menu"|t }}</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>menu</title><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+  </button>
+  <div{{ attributes.addClass(classes) }}>
+
+    <button class="menu-close" aria-expanded="true"><span class="visually-hidden">Close menu</span></button>
+    {{ content }}
+  </div>
+{% endif %}

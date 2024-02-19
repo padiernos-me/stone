@@ -1,0 +1,24 @@
+{% extends '@symbiosis/pages/page.html.twig' %}
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+
+{% block page %}
+
+  {% block banner %}
+    <header role="banner" id="site-header" class="site-header">
+      {% if logo %}
+        <img src="{{ logo }}" class="logo" alt="{{ site_name }}"/>
+      {% endif %}
+    </header>
+  {% endblock banner %}
+
+{% endblock page %}

@@ -1,0 +1,17 @@
+{% if page.highlight %}
+  {% block highlight %}
+    {% include '@organism/highlight/highlight.html.twig' %}
+  {% endblock highlight %}
+{% endif %}
+
+{% if page.hero %}
+  {% block hero %}
+    {% include '@organism/hero/hero.html.twig' %}
+  {% endblock hero %}
+{% endif %}
+
+{% if page.content %}
+  {% block content %}
+    {% include '@organism/content/content.html.twig' %}
+  {% endblock %}
+{% endif %}

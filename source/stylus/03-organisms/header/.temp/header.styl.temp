@@ -1,0 +1,7 @@
+header
+  .site-header__inner
+    display grid
+    grid-template-columns 1fr auto
+    .site-header__brand-wrapper,
+    .site-header__nav-wrapper
+      display grid

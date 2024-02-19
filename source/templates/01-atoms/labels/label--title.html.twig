@@ -1,0 +1,11 @@
+{% extends '@atom/labels/label.html.twig' %}
+
+{%
+  set title_classes = [
+  label_display == 'visually_hidden' ? 'visually-hidden',
+]
+%}
+
+{% block label %}
+  <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+{% endblock label %}

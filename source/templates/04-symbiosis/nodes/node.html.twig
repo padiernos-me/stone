@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Custom theme implementation to display a node.
+ * Starlight default for all nodes not in "full" view mode
+ *
+ * Documentation here: https://api.drupal.org/api/drupal/core!modules!node!templates!node.html.twig/8.2.x
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    'node',
+    node.bundle|clean_class,
+    view_mode ? view_mode|clean_class,
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+ {{ content.field_image }}
+  <div class="content">
+    {{ title_prefix }}
+      {% if not page %}
+        <h2{{ title_attributes }}>
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
+      {{ title_suffix }}
+    {% endif %}
+    {{ content|without('links', 'field_image') }}
+
+    {% if display_submitted %}
+      <footer class="content-footer">
+        {{ author_picture }}
+        <div{{ author_attributes.addClass('submitted') }}>
+          {% trans %}{{ author_name }} | <span class="date">{{ date }}</span> {% endtrans %}
+          {{ metadata }}
+        </div>
+        {{ content.links }}
+      </footer>
+    {% endif %}
+  </div>
+
+</article>

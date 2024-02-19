@@ -1,0 +1,43 @@
+name: Stone
+type: theme
+description: "Base theme inspired by Starbase & Basic"
+core_version_requirement: ^9 || ^10
+#base theme: starbase
+base theme: false
+
+regions:
+  branding                          : "Branding"
+  navigation                        : "Navigation"
+  hero                              : "Hero"
+  highlight                         : "Highlight"
+  content                           : "Content"
+  sidebar                           : "Sidebar"
+  footer                            : "Footer"
+  buffer                            : "Buffer"
+
+components:
+  namespaces:
+
+    # sources
+    template                        : source/templates
+    stylus                          : source/stylus
+#    script                          : source/scripts
+
+    # assets
+#    img                             : assets/img
+    css                             : assets/css
+    js                              : assets/js
+
+    # system: structure
+    core                            : source/templates/00-core
+    atom                            : source/templates/01-atoms
+    molecule                        : source/templates/02-molecules
+    organism                        : source/templates/03-organisms
+    symbiosis                       : source/templates/04-symbiosis
+    synergy                         : source/templates/05-synergy
+
+libraries:
+  - stone/global-styling
+
+dependencies:
+  - components:components

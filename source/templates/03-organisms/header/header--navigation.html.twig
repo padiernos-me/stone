@@ -1,0 +1,13 @@
+{% extends "@organism/header/header.html.twig" %}
+
+    {% block site_header %}
+      <div class="site-header__inner fix-width">
+        <div class="site-header__brand-wrapper">
+          {{ page.branding }}
+        </div>
+
+        <div class="site-header__nav-wrapper">
+          {% include '@organism/navigation/navigation--main.html.twig' %}
+        </div>
+      </div>
+    {% endblock site_header %}

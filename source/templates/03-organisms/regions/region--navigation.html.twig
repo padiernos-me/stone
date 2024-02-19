@@ -1,0 +1,18 @@
+{% extends "@organism/regions/region.html.twig" %}
+
+{% set classes = [
+  'region--' ~ region|clean_class
+]
+%}
+
+{% block content %}
+  {% if content %}
+    <div{{ attributes.addClass(classes) }}>
+      <input class="menu-button" type="checkbox" id="menu-button" role="button" />
+      <label class="menu-icon" for="menu-button"><span class="nav-icon"></span></label>
+      {% block region_content %}
+        {{ content }}
+      {% endblock region_content %}
+    </div>
+  {% endif %}
+{% endblock content %}

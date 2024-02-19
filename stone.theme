@@ -1,0 +1,18 @@
+<?php
+/**
+ * Preprocess functions
+ */
+
+use Drupal\Component\Utility\Html;
+
+/**
+ * Preprocess functions for block templates
+ */
+function stone_preprocess_block(&$variables): void
+{
+  // Add machine name of block as a class
+  if (array_key_exists('#id', $variables['elements'])) {
+    $variables['attributes']['class'][] = Html::escape('block--' . $variables['elements']['#id']);
+    $variables['attributes']['class'][] = Html::escape('block--block-' . $variables['elements']['#id']);
+  }
+}

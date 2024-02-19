@@ -1,0 +1,14 @@
+main
+  max-width 100dvw
+  >
+    figure,
+    section
+      padding-inline 1.25rem
+    figure
+      max-width 100%
+      .hero__inner
+        max-width 50%
+        margin-inline auto
+    section
+      max-width 50%
+      margin-inline auto

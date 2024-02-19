@@ -1,0 +1,7 @@
+{% extends '@atom/field_items/field-item.html.twig' %}
+
+{% block item %}
+  {% for item in items %}
+    <div{{ attributes }}>{{ item.content }}</div>
+  {% endfor %}
+{% endblock item %}

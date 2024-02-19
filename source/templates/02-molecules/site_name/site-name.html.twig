@@ -1,0 +1,6 @@
+{% set site_name_parts = site_name|split(' ') %}
+  <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-branding__name">
+    {% for site_name_part in site_name_parts %}
+      <span class="site-branding__name-part">{{ site_name_part }}</span>
+    {% endfor %}
+</a>

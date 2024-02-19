@@ -1,0 +1,17 @@
+body
+  &.toolbar-horizontal
+    #off-canvas
+      min-height calc(100dvh - 60px)
+  &.toolbar-vertical
+    #off-canvas
+      min-height calc(100dvh - 49px)
+  &.maintenance-page
+    #off-canvas
+      place-items center
+      grid-template-rows auto
+
+.wrapper
+  --width__default width__default
+
+  width @css{min(var(--width__default), 100% - 1.25rem)}
+  margin-inline auto

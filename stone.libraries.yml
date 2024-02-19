@@ -1,0 +1,6 @@
+global-styling:
+  css:
+    theme:
+      assets/css/stone.theme.css: {}
+  js:
+    assets/js/stone.theme.js: {}
